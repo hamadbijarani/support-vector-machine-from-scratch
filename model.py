@@ -34,8 +34,18 @@ def initialize_parameters(n_features):
 
     return params
 
-# Step 3 - compute_scores (not yet solved)
-# TODO: implement
+# Step 3 - compute_scores
+import numpy as np
+
+def initialize_parameters(n_features):
+    return {'w': np.zeros(n_features), 'b': 0.0}
+
+def compute_scores(x, params):
+    x = np.asarray(x, dtype=float)
+    w = np.asarray(params['w'], dtype=float).ravel()
+    b = np.asarray(params['b'], dtype=float).ravel()
+    scores = x @ w + b
+    return np.asarray(scores).ravel()
 
 # Step 4 - predict_from_scores (not yet solved)
 # TODO: implement
